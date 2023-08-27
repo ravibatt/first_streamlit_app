@@ -1,6 +1,5 @@
 import streamlit
 import pandas
-import snowflake.connector
 from urllib.error import URLError
 
 
@@ -42,6 +41,7 @@ streamlit.dataframe(fruityvice_normalized)
 #don't run anything past here while we troubleshoot
 streamlit.stop()
 
+import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
