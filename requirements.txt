@@ -1,0 +1,2 @@
+# require,emts.txt
+snowflake-connector-python
